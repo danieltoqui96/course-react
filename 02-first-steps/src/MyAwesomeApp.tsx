@@ -21,12 +21,12 @@ const myStyles: CSSProperties = {
 export function MyAwesomeApp() {
   return (
     <>
-      <h1>{firstName}</h1>
-      <h3>{lastName}</h3>
+      <h1 data-testid="firts-name-title"> {firstName} </h1>
+      <h3> {lastName} </h3>
 
-      <p>{favoriteGames.join(", ")}</p>
+      <p> {favoriteGames.join(", ")} </p>
 
-      <h1>{isActive ? "Activo" : "No activo"}</h1>
+      <h1> {isActive ? "Activo" : "No activo"} </h1>
 
       <p
         // Forma 1 de agregar estilos
