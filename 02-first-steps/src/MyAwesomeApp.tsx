@@ -11,7 +11,7 @@ const address = {
   country: "Canadá",
 };
 
-// Forma 2 de agregar estilos
+// Forma 1 de agregar estilos
 const myStyles: CSSProperties = {
   backgroundColor: "#ccc",
   borderRadius: isActive ? 20 : 10,
@@ -20,27 +20,23 @@ const myStyles: CSSProperties = {
 
 export function MyAwesomeApp() {
   return (
-    <>
+    <div data-testid="div-app">
       <h1 data-testid="firts-name-title"> {firstName} </h1>
       <h3> {lastName} </h3>
 
-      <p> {favoriteGames.join(", ")} </p>
+      <p className="mi-clase-favorita">{favoriteGames.join(", ")}</p>
+      <p>{2 + 2}</p>
 
-      <h1> {isActive ? "Activo" : "No activo"} </h1>
+      <h1>{isActive ? "Activo" : "No activo"}</h1>
 
-      <p
-        // Forma 1 de agregar estilos
-        // style={{
-        //   backgroundColor: "#ccc",
-        //   borderRadius: isActive ? 20 : 10,
-        //   padding: 10,
-        // }}
-
-        // Forma 2 de agregar estilos
-        style={myStyles}
-      >
-        {JSON.stringify(address)}
-      </p>
-    </>
+      <p style={myStyles}>{JSON.stringify(address)}</p>
+    </div>
   );
 }
+
+// Forma 2 de agregar estilos
+// style={{
+//   backgroundColor: "#ccc",
+//   borderRadius: isActive ? 20 : 10,
+//   padding: 10,
+// }}
