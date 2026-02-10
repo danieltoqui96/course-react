@@ -1,6 +1,6 @@
 import type { GiphyRandomResponse } from "../data/giphy.response";
 
-const API_KEY = "Mez8tR4bch8GkylVzRSApHjaFlnTmK1I";
+const API_KEY = import.meta.env.VITE_GIPHY_API_KEY;
 
 // Función auxiliar para insertar imagen en el DOM
 const createImageInsideDom = (url: string) => {
