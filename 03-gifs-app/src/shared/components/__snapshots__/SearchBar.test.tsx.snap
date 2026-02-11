@@ -1,0 +1,52 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`getGifsByQuery > should call onQuery with the correct value after 700ms 1`] = `
+<div>
+  <div
+    class="search-container"
+  >
+    <input
+      placeholder="Buscar"
+      type="text"
+      value=""
+    />
+    <button>
+      Buscar
+    </button>
+  </div>
+</div>
+`;
+
+exports[`getGifsByQuery > should render searbar correctly 1`] = `
+<div>
+  <div
+    class="search-container"
+  >
+    <input
+      placeholder="Buscar"
+      type="text"
+      value=""
+    />
+    <button>
+      Buscar
+    </button>
+  </div>
+</div>
+`;
+
+exports[`getGifsByQuery > should render searbar correctly 2`] = `
+<div>
+  <div
+    class="search-container"
+  >
+    <input
+      placeholder="Buscar"
+      type="text"
+      value=""
+    />
+    <button>
+      Buscar
+    </button>
+  </div>
+</div>
+`;
