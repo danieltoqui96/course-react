@@ -6,7 +6,9 @@ import { createRoot } from "react-dom/client";
 // import { TrafficLightWithHook } from "./02-useEffect/TrafficLightWithhook";
 // import { PokemonPage } from "./03-examples/PokemonPage";
 // import { FocusScreen } from "./useRef/FocusScreen";
-import { TasksApp } from "./05-useReducer/TaskApp";
+// import { TasksApp } from "./05-useReducer/TaskApp";
+// import { ScrambleWords } from "./05-useReducer/ScrambleWords";
+import { ScrambleWords } from "./05-useReducer/ScrambleWordReduce";
 
 import "./index.css";
 
@@ -18,6 +20,8 @@ createRoot(document.getElementById("root")!).render(
     {/* <TrafficLightWithHook /> */}
     {/* <PokemonPage /> */}
     {/* <FocusScreen /> */}
-    <TasksApp />
+    {/* <TasksApp /> */}
+    {/* <ScrambleWords /> */}
+    <ScrambleWords />
   </>,
 );
