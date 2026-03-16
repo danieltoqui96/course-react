@@ -8,7 +8,8 @@ import { HeroStats } from "@/heroes/components/HeroStats";
 import { HeroGrid } from "@/heroes/components/HeroGrid";
 import { CustomPagination } from "@/components/custom/CustomPagination";
 import { CustomBreadcrum } from "@/components/custom/CustomBreadcrum";
-import { getHeroesByPageAction } from "@/heroes/actions/get-heroes-by-page.actions";
+import { getHeroesByPageAction } from "@/heroes/actions/get-heroes-by-page.action";
+import { getSummaryAction } from "@/heroes/actions/get-summary.action";
 
 export const HomePage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -16,6 +17,12 @@ export const HomePage = () => {
   const activeTab = searchParams.get("tab") ?? "all";
   const page = searchParams.get("page") ?? "1";
   const limit = searchParams.get("limit") ?? "6";
+
+  const { data: summary } = useQuery({
+    queryKey: ["summary-information"],
+    queryFn: getSummaryAction,
+    staleTime: 1000 * 60 * 5,
+  });
 
   const selectedTab = useMemo(() => {
     const validTabs = ["all", "favorites", "heroes", "villains"];
@@ -53,7 +60,7 @@ export const HomePage = () => {
                 })
               }
             >
-              All Characters (16)
+              All Characters ({summary?.totalHeroes})
             </TabsTrigger>
             <TabsTrigger
               value="favorites"
@@ -76,7 +83,7 @@ export const HomePage = () => {
                 })
               }
             >
-              Heroes (12)
+              Heroes ({summary?.heroCount})
             </TabsTrigger>
             <TabsTrigger
               value="villains"
@@ -87,7 +94,7 @@ export const HomePage = () => {
                 })
               }
             >
-              Villains (2)
+              Villains ({summary?.villainCount})
             </TabsTrigger>
           </TabsList>
 
