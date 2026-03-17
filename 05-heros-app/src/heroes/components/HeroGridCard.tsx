@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import type { Hero } from "../types/hero.interface";
+import { use } from "react";
+import { FavoriteHeroContext } from "../context/FavoriteHeroContext";
 
 interface Props {
   hero: Hero;
@@ -12,6 +14,9 @@ interface Props {
 
 export const HeroGridCard = ({ hero }: Props) => {
   const navigate = useNavigate();
+
+  const { isfavorite, toggleFavorite } = use(FavoriteHeroContext);
+
   const handleClick = () => {
     navigate(`/heroes/${hero.slug}`);
   };
@@ -50,8 +55,13 @@ export const HeroGridCard = ({ hero }: Props) => {
           size="sm"
           variant="ghost"
           className="absolute bottom-3 right-3 bg-white/90 hover:bg-white"
+          onClick={() => toggleFavorite(hero)}
         >
-          <Heart className="h-4 w-4 text-gray-600" />
+          <Heart
+            className={`h-4 w-4 ${
+              isfavorite(hero) ? "fill-red-500 text-red-500" : "text-gray-600"
+            }`}
+          />
         </Button>
 
         <Button
