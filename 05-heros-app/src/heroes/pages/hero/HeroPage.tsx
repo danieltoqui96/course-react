@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Shield, Zap, Brain, Gauge, Users, Star, Award } from "lucide-react";
-import { getHeroAction } from "@/heroes/actions/get-hero";
+import { getHeroAction } from "@/heroes/actions/get-hero.action";
 
 export const HeroPage = () => {
   const { idSlug = "" } = useParams();
