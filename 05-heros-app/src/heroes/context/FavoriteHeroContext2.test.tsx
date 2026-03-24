@@ -64,8 +64,6 @@ describe('FavoriteHeroContext', () => {
   test('should initialize with default values', () => {
     renderContextTest();
 
-    screen.debug();
-
     expect(screen.getByTestId('favorite-count').textContent).toBe('0');
     expect(screen.getByTestId('favorite-list').children.length).toBe(0);
   });
